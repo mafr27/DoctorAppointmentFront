@@ -1,0 +1,61 @@
+<body class="b1">
+    <div class="">
+      <div class="container">
+      <form #form="ngForm" autocomplete="off"  class="form bt1  p-3 mb-3 rounded-3 mat-card">
+        <input type="hidden" name="UserId" [value]="userService.usersData.UserId">
+        <div class="row g-0">
+          <div class="col text-center p-2 mb-3 rounded-3 text-black" style="background-color:#f868b0">
+            <span class="fs-3">User Registration</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col form-group mb-3">
+            <input name="FirstName" type="text" class="form-control text-black" id="FirstName" #FirstName="ngModel" [(ngModel)]="userService.usersData.FirstName" placeholder="First Name"
+            minlength="3" maxlength="25" required/>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col form-group mb-3">
+            <input name="Lastname" type="text" class="form-control text-black" id="Lastname" #UserLname="ngModel" [(ngModel)]="userService.usersData.Lastname" placeholder="Last Name"
+            minlength="5" maxlength="10" required/>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col form-group mb-3">
+              <input name="Dob" type="text" class="form-control text-black" id="Dob" #Dob="ngModel" [(ngModel)]="userService.usersData.Dob" placeholder="Dob"
+              minlength="6" maxlength="20" required/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col form-group mb-3">
+              <input name="Mobileno" type="text" class="form-control text-black" id="Mobileno" #Mobileno="ngModel" [(ngModel)]="userService.usersData.Mobileno" placeholder="Mobileno"
+              minlength="6" maxlength="10" required/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col form-group mb-3">
+              <input name="Email" type="text" class="form-control text-black" id="Email" #Email="ngModel" [(ngModel)]="userService.usersData.Email" placeholder="Email"
+              minlength="6" maxlength="10" required/>
+            </div>
+          </div>
+        <div class="row">
+          <div class="col form-group mb-3">
+            <input name="Password" type="password" class="form-control text-black" id="Password" #Password="ngModel" [(ngModel)]="userService.usersData.Password" placeholder="Password" minlength="5" maxlength="20" required/>
+          </div>
+          <div class="col form-group mb-3">
+            
+            <input name="Gender" type="text" class="form-control text-black" id="Gender" #Gender="ngModel" [(ngModel)]="userService.usersData.Gender" placeholder="Gender"
+            minlength="10" maxlength="10" required/>
+          </div>
+        </div>        
+        <div class="row">
+          <div class="col-4 offset-4">
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary rounded-5" (click)="onSubmit(form)">Submit</button>
+            </div>
+        </div>
+        </div>  
+      </form>
+    </div>
+    </div>
+  </body>
