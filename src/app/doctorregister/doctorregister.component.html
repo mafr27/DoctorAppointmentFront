@@ -2,7 +2,7 @@
     <div class="">
       <div class="container">
       <form #form="ngForm" autocomplete="off"  class="form bt1  p-3 mb-3 rounded-3 mat-card">
-        <input type="hidden" name="UserId" [value]="userService.usersData.UserId">
+        <input type="hidden" name="DoctorId" [value]="doctorService.doctorData.DoctorId">
         <div class="row g-0">
           <div class="col text-center p-2 mb-3 rounded-3 text-black" style="background-color:#f868b0">
             <span class="fs-3">Doctor Registration</span>
@@ -10,28 +10,22 @@
         </div>
         <div class="row">
           <div class="col form-group mb-3">
-            <input name="Fname" type="text" class="form-control text-black" id="Fname" #Fname="ngModel" [(ngModel)]="doctorService.doctorData.FirstName" placeholder="First Name"
+            <input name="Fname" type="text" class="form-control text-black" id="Fname" #Fname="ngModel" [(ngModel)]="doctorService.doctorData.Fname" placeholder="First Name"
             minlength="3" maxlength="25" required/>
           </div>
         </div>
         <div class="row">
           <div class="col form-group mb-3">
-            <input name="Lname" type="text" class="form-control text-black" id="Lname" #Lname="ngModel" [(ngModel)]="doctorService.doctorData.Lastname" placeholder="Last Name"
+            <input name="Lname" type="text" class="form-control text-black" id="Lname" #Lname="ngModel" [(ngModel)]="doctorService.doctorData.Lname" placeholder="Last Name"
             minlength="5" maxlength="10" required/>
           </div>
         </div>
         <div class="row">
             <div class="col form-group mb-3">
-              <input name="Contactno" type="text" class="form-control text-black" id="Contactno" #Contactno="ngModel" [(ngModel)]="doctorService.doctorData.Contactno" placeholder="Dob"
+              <input name="Contactno" type="text" class="form-control text-black" id="Contactno" #Contactno="ngModel" [(ngModel)]="doctorService.doctorData.Contactno" placeholder="Contactno"
               minlength="6" maxlength="20" required/>
             </div>
-          </div>
-          <div class="row">
-            <div class="col form-group mb-3">
-              <input name="Mobileno" type="text" class="form-control text-black" id="Mobileno" #Mobileno="ngModel" [(ngModel)]="doctorService.doctorData.Mobileno" placeholder="Mobile no"
-              minlength="6" maxlength="10" required/>
             </div>
-          </div>
           <div class="row">
             <div class="col form-group mb-3">
               <input name="Specialization" type="text" class="form-control text-black" id="Specialization" #Specialization="ngModel" [(ngModel)]="doctorService.doctorData.Specialization" placeholder="Specialization"

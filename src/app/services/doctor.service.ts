@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/user.model';
+import { Doctor } from '../models/doctor.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,27 +10,28 @@ export class DoctorService {
 
   constructor(private objcHttp:HttpClient) { }
 
-  readonly userUrl:"https://localhost:5001/api/doctors";
+  readonly doctorUrl:"https://localhost:5001/api/doctors";
 
 
-  usersList: User[];
-  usersData: User=new User();
+  doctorList: Doctor[];
+  doctorData: Doctor=new Doctor();
 
-  getUsers() { 
-    this.objcHttp.get(this.userUrl).toPromise().then(res => this.usersList = res as User[])
-    console.log(this.usersList);
+  getDoctor() { 
+    this.objcHttp.get(this.doctorUrl).toPromise().then(res => this.doctorList = res as Doctor[])
+    console.log(this.doctorList);
   }
 
-  postUsers() {
-    return this.objcHttp.post(this.userUrl, this.usersData);
+  postDoctor() {
+    console.log(this.doctorData)
+    return this.objcHttp.post(this.doctorUrl, this.doctorData);
   }
 
-  putUsers() {
-    return this.objcHttp.put(this.userUrl + "/" + this.usersData.UserId, this.usersData)
+  putDoctor() {
+    return this.objcHttp.put(this.doctorUrl + "/" + this.doctorData.DoctorId, this.doctorData)
   }
 
-  delUsers(UserId) {
-    return this.objcHttp.delete(this.userUrl + "/" + UserId);
+  delDoctor(DoctorId) {
+    return this.objcHttp.delete(this.doctorUrl + "/" + DoctorId);
   }
 
 }
